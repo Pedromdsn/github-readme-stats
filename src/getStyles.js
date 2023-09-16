@@ -91,10 +91,12 @@ const getStyles = ({
   return `
     @keyframes colorChange {
       0% {
-        stroke: #FFFF00;
+        fill: #FFFF00;
+        transform: scale(0.9);
       }
       100% {
-        stroke: #FFD700; 
+        fill: #FFD700;
+        transform: scale(1.1);
       }
     }
     .stat {
@@ -109,7 +111,7 @@ const getStyles = ({
       animation: fadeInAnimation 0.3s ease-in-out forwards;
     }
     .rank-text {
-      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${textColor};
+      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #FFFF00;
       animation: scaleInAnimation 0.3s ease-in-out forwards;
       animation: rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
     }
