@@ -286,7 +286,7 @@ const renderStatsCard = (stats, options = {}) => {
   );
 
   // the lower the user's percentile the better
-  const progress = 0;
+  const progress = 100;
   const cssStyles = getStyles({
     titleColor,
     ringColor,
