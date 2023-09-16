@@ -99,8 +99,6 @@ const getStyles = ({
     }
     .stat {
       font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: ${textColor};
-      animation: rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
-
     }
     @supports(-moz-appearance: auto) {
       /* Selector detects Firefox */
@@ -119,6 +117,7 @@ const getStyles = ({
     }
     .rank-percentile-text {
       font-size: 16px;
+      animation: rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
     }
     
     .not_bold { font-weight: 400 }

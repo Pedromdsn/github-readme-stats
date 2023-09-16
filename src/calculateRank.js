@@ -83,7 +83,7 @@ function calculateRank({
 
   const level = LEVELS[THRESHOLDS.findIndex((t) => rank * 100 <= t)];
 
-  return { rank: "S++", percentile: rank * 100 };
+  return { level: "S++", percentile: rank * 100 };
 }
 
 export { calculateRank };
