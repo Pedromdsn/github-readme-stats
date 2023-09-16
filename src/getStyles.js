@@ -111,6 +111,7 @@ const getStyles = ({
     .rank-text {
       font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${textColor};
       animation: scaleInAnimation 0.3s ease-in-out forwards;
+      animation: rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
     }
     .rank-percentile-header {
       font-size: 14px;
@@ -142,7 +143,6 @@ const getStyles = ({
       transform-origin: -10px 8px;
       transform: rotate(-90deg);
       animation: rankAnimation 1s forwards ease-in-out;
-      animation: rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
 
     }
     ${process.env.NODE_ENV === "test" ? "" : getProgressAnimation({ progress })}
