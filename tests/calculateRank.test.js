@@ -108,7 +108,7 @@ describe("Test calculateRank", () => {
   //   ).toStrictEqual({ level: "S", percentile: 0.4578556547153667 });
   // });
 
-  it("get rank S with 0.06", () => {
+  it("get rank S++ rank", () => {
     expect(
       calculateRank({
         all_commits: false,
@@ -120,7 +120,7 @@ describe("Test calculateRank", () => {
         stars: 600000,
         followers: 50000,
       }),
-    ).toStrictEqual({ level: "S", percentile: 0.6 });
+    ).toStrictEqual({ level: "S++", percentile: 0.6 });
 
   });
 });

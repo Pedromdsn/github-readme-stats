@@ -92,6 +92,14 @@ const getStyles = ({
     .stat {
       font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: ${textColor};
     }
+    @keyframes colorChange {
+      0% {
+        stroke: #FFFF00;
+      }
+      100% {
+        stroke: #FFD700;
+      }
+    }
     @supports(-moz-appearance: auto) {
       /* Selector detects Firefox */
       .stat { font-size:12px; }
@@ -134,6 +142,8 @@ const getStyles = ({
       transform-origin: -10px 8px;
       transform: rotate(-90deg);
       animation: rankAnimation 1s forwards ease-in-out;
+      animation: rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
+
     }
     ${process.env.NODE_ENV === "test" ? "" : getProgressAnimation({ progress })}
   `;
