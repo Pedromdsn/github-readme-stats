@@ -89,16 +89,18 @@ const getStyles = ({
   progress,
 }) => {
   return `
-    .stat {
-      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: ${textColor};
-    }
     @keyframes colorChange {
       0% {
         stroke: #FFFF00;
       }
       100% {
-        stroke: #FFD700;
+        stroke: #FFD700; 
       }
+    }
+    .stat {
+      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: ${textColor};
+      animation: rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
+
     }
     @supports(-moz-appearance: auto) {
       /* Selector detects Firefox */
@@ -111,7 +113,6 @@ const getStyles = ({
     .rank-text {
       font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${textColor};
       animation: scaleInAnimation 0.3s ease-in-out forwards;
-      animation: rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
     }
     .rank-percentile-header {
       font-size: 14px;
