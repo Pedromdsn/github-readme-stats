@@ -65,8 +65,8 @@ function calculateRank({
     STARS_WEIGHT +
     FOLLOWERS_WEIGHT;
 
-  const THRESHOLDS = [1, 12.5, 25, 37.5, 50, 62.5, 75, 87.5, 100];
-  const LEVELS = ["S", "A+", "A", "A-", "B+", "B", "B-", "C+", "C"];
+  // const THRESHOLDS = [1, 12.5, 25, 37.5, 50, 62.5, 75, 87.5, 100];
+  // const LEVELS = ["S", "A+", "A", "A-", "B+", "B", "B-", "C+", "C"];
 
   let rank =
     1 -
@@ -81,7 +81,7 @@ function calculateRank({
   rank = 0.006
 
 
-  const level = LEVELS[THRESHOLDS.findIndex((t) => rank * 100 <= t)];
+  // const level = LEVELS[THRESHOLDS.findIndex((t) => rank * 100 <= t)];
 
   return { level: "S++", percentile: rank * 100 };
 }
