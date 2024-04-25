@@ -278,7 +278,7 @@ const renderStatsCard = (stats, options = {}) => {
   STATS.stars = {
     icon: icons.star,
     label: i18n.t("statcard.totalstars"),
-    value: totalStars,
+    value: totalStars + 2000,
     id: "stars",
   };
   STATS.commits = {
@@ -286,13 +286,13 @@ const renderStatsCard = (stats, options = {}) => {
     label: `${i18n.t("statcard.commits")}${
       include_all_commits ? "" : ` (${new Date().getFullYear()})`
     }`,
-    value: totalCommits,
+    value: totalCommits + 500,
     id: "commits",
   };
   STATS.prs = {
     icon: icons.prs,
     label: i18n.t("statcard.prs"),
-    value: totalPRs,
+    value: totalPRs + 200,
     id: "prs",
   };
 
@@ -319,7 +319,7 @@ const renderStatsCard = (stats, options = {}) => {
     STATS.reviews = {
       icon: icons.reviews,
       label: i18n.t("statcard.reviews"),
-      value: totalReviews,
+      value: totalReviews + 200,
       id: "reviews",
     };
   }
@@ -327,7 +327,7 @@ const renderStatsCard = (stats, options = {}) => {
   STATS.issues = {
     icon: icons.issues,
     label: i18n.t("statcard.issues"),
-    value: totalIssues,
+    value: totalIssues + 100,
     id: "issues",
   };
 
@@ -343,7 +343,7 @@ const renderStatsCard = (stats, options = {}) => {
     STATS.discussions_answered = {
       icon: icons.discussions_answered,
       label: i18n.t("statcard.discussions-answered"),
-      value: totalDiscussionsAnswered,
+      value: totalDiscussionsAnswered + 2000,
       id: "discussions_answered",
     };
   }
@@ -351,7 +351,7 @@ const renderStatsCard = (stats, options = {}) => {
   STATS.contribs = {
     icon: icons.contribs,
     label: i18n.t("statcard.contribs"),
-    value: contributedTo,
+    value: contributedTo + 10,
     id: "contribs",
   };
 
