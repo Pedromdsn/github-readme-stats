@@ -112,8 +112,7 @@ const getStyles = ({
     }
     .rank-text {
       font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #FFFF00;
-      animation: scaleInAnimation 0.3s ease-in-out forwards;
-      animation: rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
+      animation: scaleInAnimation 0.3s ease-in-out forwards, rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
     }
     .rank-percentile-header {
       font-size: 14px;
