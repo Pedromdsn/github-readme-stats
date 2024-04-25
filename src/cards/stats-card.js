@@ -137,6 +137,16 @@ const getStyles = ({
   progress,
 }) => {
   return `
+    @keyframes colorChange {
+      0% {
+        fill: #FFFF00;
+        transform: scale(0.9);
+      }
+      100% {
+        fill: #FFD700;
+        transform: scale(1.1);
+      }
+    }
     .stat {
       font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: ${textColor};
     }
@@ -149,8 +159,8 @@ const getStyles = ({
       animation: fadeInAnimation 0.3s ease-in-out forwards;
     }
     .rank-text {
-      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${textColor};
-      animation: scaleInAnimation 0.3s ease-in-out forwards;
+      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #FFFF00;
+      animation: rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
     }
     .rank-percentile-header {
       font-size: 14px;
