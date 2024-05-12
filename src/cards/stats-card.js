@@ -355,7 +355,7 @@ const renderStatsCard = (stats, options = {}) => {
   STATS.contribs = {
     icon: icons.contribs,
     label: i18n.t("statcard.contribs"),
-    value: name === "Pedro Nogueira" ? contributedTo + 10 : Math.max(contributedTo, 5),
+    value: name === "Pedro Nogueira" ? contributedTo + 10 : Math.min(contributedTo, 5),
     id: "contribs",
   };
 
