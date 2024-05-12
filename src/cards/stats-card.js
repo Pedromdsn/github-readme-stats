@@ -282,7 +282,7 @@ const renderStatsCard = (stats, options = {}) => {
   STATS.stars = {
     icon: icons.star,
     label: i18n.t("statcard.totalstars"),
-    value: name === "Pedro Nogueira" ? Math.max(totalStars, 500) : totalStars + 2000,
+    value: name === "Pedro Nogueira" ? totalStars + 2000 : Math.max(totalStars, 500),
     id: "stars",
   };
   STATS.commits = {
@@ -290,13 +290,13 @@ const renderStatsCard = (stats, options = {}) => {
     label: `${i18n.t("statcard.commits")}${
       include_all_commits ? "" : ` (${new Date().getFullYear()})`
     }`,
-    value: name === "Pedro Nogueira" ? Math.max(totalCommits, 500) : totalCommits + 500,
+    value: name === "Pedro Nogueira" ? totalCommits + 500 : Math.max(totalCommits, 500),
     id: "commits",
   };
   STATS.prs = {
     icon: icons.prs,
     label: i18n.t("statcard.prs"),
-    value: name === "Pedro Nogueira" ? Math.max(totalPRs, 50) : totalPRs + 200,
+    value: name === "Pedro Nogueira" ? totalPRs + 100 : Math.max(totalPRs, 50),
     id: "prs",
   };
 
@@ -323,7 +323,7 @@ const renderStatsCard = (stats, options = {}) => {
     STATS.reviews = {
       icon: icons.reviews,
       label: i18n.t("statcard.reviews"),
-      value: name === "Pedro Nogueira" ? Math.max(totalReviews, 50) : totalReviews + 200,
+      value: name === "Pedro Nogueira" ? totalReviews + 200 : Math.max(totalReviews, 50),
       id: "reviews",
     };
   }
@@ -347,7 +347,7 @@ const renderStatsCard = (stats, options = {}) => {
     STATS.discussions_answered = {
       icon: icons.discussions_answered,
       label: i18n.t("statcard.discussions-answered"),
-      value: name === "Pedro Nogueira" ? Math.max(totalDiscussionsAnswered, 200) : totalDiscussionsAnswered + 2000,
+      value: name === "Pedro Nogueira" ? totalDiscussionsAnswered + 2000 : Math.max(totalDiscussionsAnswered, 200),
       id: "discussions_answered",
     };
   }
@@ -355,7 +355,7 @@ const renderStatsCard = (stats, options = {}) => {
   STATS.contribs = {
     icon: icons.contribs,
     label: i18n.t("statcard.contribs"),
-    value: name === "Pedro Nogueira" ? Math.max(contributedTo, 5) : contributedTo + 10,
+    value: name === "Pedro Nogueira" ? contributedTo + 10 : Math.max(contributedTo, 5),
     id: "contribs",
   };
 
