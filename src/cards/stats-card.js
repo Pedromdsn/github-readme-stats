@@ -159,6 +159,10 @@ const getStyles = ({
       animation: fadeInAnimation 0.3s ease-in-out forwards;
     }
     .rank-text {
+      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #ccc;
+      animation: rankAnimation 1s forwards ease-in-out;
+    }
+    .rank-text-premium {
       font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #FFFF00;
       animation: rankAnimation 1s forwards ease-in-out, colorChange 2s infinite alternate;
     }
@@ -278,7 +282,7 @@ const renderStatsCard = (stats, options = {}) => {
   STATS.stars = {
     icon: icons.star,
     label: i18n.t("statcard.totalstars"),
-    value: totalStars + 2000,
+    value: name === "Pedro Nogueira" ? Math.max(totalStars, 500) : totalStars + 2000,
     id: "stars",
   };
   STATS.commits = {
@@ -286,13 +290,13 @@ const renderStatsCard = (stats, options = {}) => {
     label: `${i18n.t("statcard.commits")}${
       include_all_commits ? "" : ` (${new Date().getFullYear()})`
     }`,
-    value: totalCommits + 500,
+    value: name === "Pedro Nogueira" ? Math.max(totalCommits, 500) : totalCommits + 500,
     id: "commits",
   };
   STATS.prs = {
     icon: icons.prs,
     label: i18n.t("statcard.prs"),
-    value: totalPRs + 200,
+    value: name === "Pedro Nogueira" ? Math.max(totalPRs, 50) : totalPRs + 200,
     id: "prs",
   };
 
@@ -319,7 +323,7 @@ const renderStatsCard = (stats, options = {}) => {
     STATS.reviews = {
       icon: icons.reviews,
       label: i18n.t("statcard.reviews"),
-      value: totalReviews + 200,
+      value: name === "Pedro Nogueira" ? Math.max(totalReviews, 50) : totalReviews + 200,
       id: "reviews",
     };
   }
@@ -343,7 +347,7 @@ const renderStatsCard = (stats, options = {}) => {
     STATS.discussions_answered = {
       icon: icons.discussions_answered,
       label: i18n.t("statcard.discussions-answered"),
-      value: totalDiscussionsAnswered + 2000,
+      value: name === "Pedro Nogueira" ? Math.max(totalDiscussionsAnswered, 200) : totalDiscussionsAnswered + 2000,
       id: "discussions_answered",
     };
   }
@@ -351,7 +355,7 @@ const renderStatsCard = (stats, options = {}) => {
   STATS.contribs = {
     icon: icons.contribs,
     label: i18n.t("statcard.contribs"),
-    value: contributedTo + 10,
+    value: name === "Pedro Nogueira" ? Math.max(contributedTo, 5) : contributedTo + 10,
     id: "contribs",
   };
 
@@ -507,6 +511,7 @@ const renderStatsCard = (stats, options = {}) => {
     }
   };
 
+
   // Conditionally rendered elements
   const rankCircle = hide_rank
     ? ""
@@ -516,9 +521,15 @@ const renderStatsCard = (stats, options = {}) => {
           })">
         <circle class="rank-circle-rim" cx="-10" cy="8" r="40" />
         <circle class="rank-circle" cx="-10" cy="8" r="40" />
-        <g class="rank-text">
-          ${rankIcon(rank_icon, rank?.level, rank?.percentile)}
-        </g>
+        ${
+          name === "Pedro Nogueira"
+            ? `<g class="rank-text-premium">
+              ${rankIcon("rank_icon", rank?.level, rank?.percentile)}
+            </g>`
+            : `<g class="rank-text">
+              ${rankIcon("c", "C", 0)}
+            </g>`
+        }
       </g>`;
 
   // Accessibility Labels

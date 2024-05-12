@@ -39,14 +39,20 @@ const rankIcon = (rankIcon, rankLevel, percentile) => {
           ${percentile.toFixed(1)}%
         </text>
       `;
-    case "default":
-    default:
+    case "S":
       return `
         <text x="-7" y="5.5" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" data-testid="level-rank-icon">
           ${rankLevel}
         </text>
       `;
-  }
+    case "c":
+    default:
+      return `
+      <text x="-12" y="7" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" data-testid="level-rank-icon">
+        ${rankLevel}
+      </text>
+    `;
+  }      
 };
 
 export { icons, rankIcon };
