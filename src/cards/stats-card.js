@@ -524,7 +524,7 @@ const renderStatsCard = (stats, options = {}) => {
         ${
           name === "Pedro Nogueira"
             ? `<g class="rank-text-premium">
-              ${rankIcon("rank_icon", rank?.level, rank?.percentile)}
+              ${rankIcon("S", rank?.level, rank?.percentile)}
             </g>`
             : `<g class="rank-text">
               ${rankIcon("c", "C", 0)}
